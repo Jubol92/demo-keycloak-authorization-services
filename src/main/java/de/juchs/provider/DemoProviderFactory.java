@@ -9,7 +9,7 @@ import org.keycloak.models.KeycloakSession;
 import org.keycloak.models.KeycloakSessionFactory;
 import org.keycloak.representations.idm.authorization.JSPolicyRepresentation;
 
-public class DemoProviderFactory implements PolicyProviderFactory<JSPolicyRepresentation> {
+public class DemoProviderFactory implements PolicyProviderFactory<DemoPolicyRepresentation> {
 
     private final DemoProvider provider = new DemoProvider();
 
@@ -29,13 +29,13 @@ public class DemoProviderFactory implements PolicyProviderFactory<JSPolicyRepres
     }
 
     @Override
-    public JSPolicyRepresentation toRepresentation(Policy policy, AuthorizationProvider authorizationProvider) {
+    public DemoPolicyRepresentation toRepresentation(Policy policy, AuthorizationProvider authorizationProvider) {
         return null;
     }
 
     @Override
-    public Class<JSPolicyRepresentation> getRepresentationType() {
-        return JSPolicyRepresentation.class;
+    public Class<DemoPolicyRepresentation> getRepresentationType() {
+        return DemoPolicyRepresentation.class;
     }
 
     @Override
